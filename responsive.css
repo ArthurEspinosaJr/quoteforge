@@ -1,0 +1,177 @@
+/* Keep the portfolio photograph at its native 3:2 ratio. */
+.live-demo {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+}
+.live-demo-visual {
+  align-self: center;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: auto;
+  margin: 24px;
+  border-radius: 8px;
+}
+.live-demo-visual img {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  transform: none;
+}
+.live-demo-visual:hover img { transform: none; }
+.live-demo-visual::after { display: none; }
+.demo-visual-caption {
+  position: static;
+  padding: 20px 76px 22px 24px;
+  gap: 8px;
+}
+.demo-visual-caption b { font-size: 28px; }
+.demo-visual-caption > span {
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 1.2px;
+}
+.demo-visual-arrow { width: 44px; height: 44px; bottom: 25px; right: 20px; }
+.live-demo-copy { min-width: 0; padding: 34px 32px 34px 8px; }
+.live-demo-copy > p { font-size: 16px; }
+.demo-feature-list { gap: 8px; margin: 22px 0 26px; }
+.demo-feature-list li { font-size: 15px; margin: 0; }
+.live-demo-copy .live-demo-note { font-size: 13px; line-height: 1.8; }
+
+/* Reflow, touch targets, and visible keyboard focus. */
+.hero > *, .work-grid > *, .pricing > *, .contact > *, .form-row > * { min-width: 0; }
+.button { min-height: 48px; max-width: 100%; }
+.button > span { flex-shrink: 0; }
+.text-link { display: inline-flex; align-items: center; min-height: 44px; }
+.nav nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.nav nav .mobile-contact { display: none; }
+.work-section a:focus-visible { outline-color: var(--lime); }
+input:focus, textarea:focus { outline: 3px solid #527021; outline-offset: 3px; }
+input, textarea { min-height: 48px; min-width: 0; }
+textarea { min-height: 150px; }
+footer > a { display: inline-flex; align-items: center; min-height: 44px; }
+.privacy-page .back { display: inline-flex; align-items: center; min-height: 44px; }
+.thank-you small a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.skip-link { max-width: calc(100% - 32px); }
+
+@media (max-width: 960px) {
+  .nav { height: auto; min-height: 84px; padding-block: 16px; gap: 14px; flex-wrap: wrap; }
+  .nav > .small { display: none; }
+  .nav .menu-toggle { display: none; }
+  .nav nav { display: flex; position: static; width: 100%; flex-wrap: wrap; gap: 8px 18px; }
+  .nav.nav-ready { flex-wrap: nowrap; }
+  .nav.nav-ready .menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-width: 82px; min-height: 44px; padding: 10px 12px; flex-shrink: 0;
+    border: 1px solid #969c90; border-radius: 5px; background: transparent;
+    font-size: 14px; white-space: nowrap;
+  }
+  .nav.nav-ready nav { display: none; }
+  .nav.nav-ready nav.is-open {
+    display: flex; position: absolute; inset: calc(100% - 1px) 0 auto;
+    width: 100%; z-index: 20; flex-direction: column; gap: 4px;
+    padding: 12px; border: 1px solid var(--line); border-radius: 8px;
+    background: white; box-shadow: 0 12px 22px #23252c15;
+  }
+  .nav nav a, .nav nav .mobile-contact { display: flex; padding: 10px 12px; font-size: 16px; }
+  .nav nav .mobile-contact { border-top: 1px solid var(--line); margin-top: 4px; font-weight: 700; }
+  .hero, .work-grid, .contact { grid-template-columns: minmax(0, 1fr); }
+  .hero { gap: 38px; }
+  .hero-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .showcase { width: 100%; max-width: 580px; margin-inline: auto; }
+  .hero .showcase, .hero .showcase:hover, .browser, .lead-card { transform: none; }
+  .lead-card { margin: -10px 0 0 28px; }
+  .live-demo { grid-template-columns: minmax(0, 1fr); }
+  .live-demo-visual { margin: 0; border-radius: 0; }
+  .live-demo-copy { padding: 30px; }
+  .portfolio-heading { display: block; }
+  .portfolio-heading > p { max-width: 600px; margin-top: 22px; }
+  .pricing { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .pricing .price-note { max-width: none; }
+  .contact { gap: 28px; }
+  .contact > div > p { max-width: none; }
+  .work-grid { gap: 30px; }
+  .work-grid p { max-width: 600px; }
+}
+
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 36px); }
+  .nav { gap: 10px; min-height: 80px; padding-block: 14px; }
+  .nav .brand-word { font-size: 24px; }
+  .nav .logo .mark { width: 42px; height: 42px; flex-basis: 42px; }
+  .hero { padding-block: 38px 45px; }
+  h1 { font-size: clamp(39px, 11.5vw, 58px); letter-spacing: -.055em; }
+  .section h2, .work-grid h2, .portfolio-heading h2, .pricing h2, .contact h2 {
+    font-size: clamp(28px, 8.4vw, 36px); letter-spacing: -.045em; overflow-wrap: break-word;
+  }
+  em { white-space: normal; }
+  .hero-copy > p, .benefits p, .process p, .work-grid p, .contact p, .pricing p,
+  .section-top > p, .portfolio-heading > p, .live-demo-copy > p { font-size: 16px; }
+  .hero-actions { width: 100%; gap: 10px; }
+  .hero-actions .button { width: 100%; font-size: 15px; padding: 16px; }
+  .text-link { font-size: 15px; }
+  .eyebrow { font-size: 11px; line-height: 1.7; flex-wrap: wrap; }
+  .line { flex-shrink: 0; }
+  .hero-note { font-size: 12px; gap: 8px 16px; }
+  .showcase { padding: 16px; }
+  .showcase-label { font-size: 10px; line-height: 1.6; gap: 15px; }
+  .showcase-label > span:last-child { white-space: nowrap; }
+  .browser-bar { padding: 10px; font-size: 11px; gap: 6px; }
+  .lights { letter-spacing: 0; flex-shrink: 0; }
+  .demo-nav { padding: 15px 14px; flex-wrap: wrap; gap: 8px; }
+  .demo-nav > span { font-size: 11px; }
+  .demo-content { padding: 20px 16px; }
+  .demo-tag { font-size: 10px; letter-spacing: .7px; }
+  .demo-content h2 { font-size: clamp(27px, 8vw, 36px); letter-spacing: -1px; }
+  .demo-content p { font-size: 13px; }
+  .demo-button { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+  .demo-services { flex-wrap: wrap; gap: 7px 12px; font-size: 11px; }
+  .demo-bottom { flex-wrap: wrap; gap: 6px 12px; font-size: 11px; padding: 14px; }
+  .lead-card { margin: 14px 0 0; padding: 14px; align-items: flex-start; gap: 10px; }
+  .lead-card > div:last-child { min-width: 0; }
+  .lead-card b, .lead-card p { font-size: 13px; }
+  .lead-card div > span { display: block; font-size: 12px; margin-top: 5px; }
+  .showcase-footer { font-size: 10px; line-height: 1.8; }
+  .showcase-footer span { display: block; margin-left: 0; }
+  .live-demo-copy { padding: 26px 22px; }
+  .live-demo-copy h3 { font-size: 32px; }
+  .live-demo-copy h3 > span { font-size: 19px; line-height: 1.5; }
+  .live-demo-copy .button { width: 100%; font-size: 15px; }
+  .live-demo-copy .live-demo-note { font-size: 14px; }
+  .demo-visual-caption { padding: 18px 73px 20px 22px; }
+  .demo-visual-caption b { font-size: 26px; }
+  .demo-visual-caption > span { font-size: 11px; letter-spacing: .5px; }
+  .demo-visual-arrow { right: 18px; bottom: 22px; }
+  .demo-feature-list li { font-size: 15px; }
+  .journey > div { gap: 14px; }
+  .journey .button { width: 100%; padding: 16px; gap: 15px; font-size: 14px; }
+  .pill { max-width: 100%; font-size: 11px; letter-spacing: .5px; }
+  .pricing { width: calc(100% - 36px); padding: 22px 18px; }
+  .price-card { padding: 22px 18px; }
+  .price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; font-size: 49px; }
+  .price > span { font-size: 14px; }
+  .price-card .button { padding: 14px; text-align: left; gap: 14px; }
+  .price-card > p, .pricing .price-note { font-size: 14px; }
+  .form-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .contact .form-privacy, form #form-status { font-size: 14px; }
+  .contact .form-privacy a { display: inline-block; padding-block: 8px; }
+  footer { gap: 14px 24px; }
+  footer > a { font-size: 14px; }
+  footer > span { font-size: 13px; }
+  .privacy-page { padding: 30px 20px 55px; }
+  .thank-you { padding: 50px 20px; }
+}
+
+@media (max-width: 360px) {
+  .nav .brand-word { font-size: 21px; letter-spacing: -1px; }
+  .nav .logo .mark { width: 36px; height: 36px; flex-basis: 36px; }
+  .nav .brand-word > span { font-size: 8px; letter-spacing: 2px; }
+  .nav .logo { gap: 6px; }
+  .nav.nav-ready .menu-toggle { min-width: 76px; padding-inline: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:hover { transform: none; }
+}
