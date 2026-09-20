@@ -175,3 +175,42 @@ footer > a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (prefers-reduced-motion: reduce) {
   .button:hover { transform: none; }
 }
+
+/* One portfolio story, from the visual demo to the customer's next step. */
+.combined-demo {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+.demo-project { min-width: 0; padding: 28px; border-right: 1px solid #50535b; }
+.combined-demo .live-demo-visual { margin: 0; border-radius: 8px; }
+.demo-project-details { padding-top: 24px; }
+.demo-project-details > p { color: #bcbec5; font-size: 16px; line-height: 1.8; margin-top: 14px; }
+.demo-project-details > .button { margin-top: 22px; }
+.demo-journey { min-width: 0; padding: 34px 32px; }
+.demo-journey > .eyebrow { color: var(--lime); font-size: 11px; }
+.demo-journey > h3 { font-size: 30px; letter-spacing: -1px; line-height: 1.25; margin: 18px 0; }
+.journey-intro { font-size: 16px; color: #bcbec5; line-height: 1.8; }
+.customer-journey { list-style: none; padding: 0; margin: 12px 0 26px; }
+.customer-journey > li {
+  display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 14px;
+  margin: 0; padding: 21px 0; border-bottom: 1px solid #50535b;
+}
+.customer-journey > li::before { content: none; }
+.journey-number { color: var(--lime); font-size: 12px; padding-top: 3px; }
+.customer-journey strong { display: block; font-family: Manrope, Arial, sans-serif; font-size: 16px; line-height: 1.5; }
+.customer-journey p { font-size: 15px; line-height: 1.8; color: #bcbec5; margin-top: 7px; }
+.combined-demo-note { grid-column: 1 / -1; border-top: 1px solid #50535b; padding: 17px 28px; color: #bcbec5; font-size: 13px; line-height: 1.8; }
+@media (max-width: 960px) {
+  .combined-demo { grid-template-columns: minmax(0, 1fr); }
+  .demo-project { padding: 0; border-right: 0; border-bottom: 1px solid #50535b; }
+  .combined-demo .live-demo-visual { border-radius: 0; }
+  .demo-project-details { padding: 26px 28px 30px; }
+  .demo-journey { padding: 30px 28px; }
+}
+@media (max-width: 600px) {
+  .demo-project-details, .demo-journey { padding: 25px 22px; }
+  .demo-project-details > .button, .demo-journey > .button { width: 100%; font-size: 15px; }
+  .demo-journey > h3 { font-size: 28px; }
+  .customer-journey > li { gap: 10px; padding-block: 19px; }
+  .combined-demo-note { padding: 17px 22px; }
+}
